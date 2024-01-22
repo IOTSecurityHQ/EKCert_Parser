@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strings"
 )
 
 // FetchCertificate fetches a certificate from a given URL
@@ -31,9 +32,6 @@ func FetchCertificate(url string) (*x509.Certificate, error) {
 }
 
 // We will need both immediate and root CA from here. Will need to tweak this.
-import (
-	"strings"
-)
 
 func GetIssuerURLs(cert *x509.Certificate) ([]string, error) {
 	var urls []string
